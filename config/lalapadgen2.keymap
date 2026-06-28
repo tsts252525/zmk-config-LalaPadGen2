@@ -59,7 +59,7 @@
             key-positions = <11 12>;
         };
 
-        Caps {
+        Caps_shift {
             bindings = <&kp LS(CAPS)>;
             key-positions = <10 20>;
         };
