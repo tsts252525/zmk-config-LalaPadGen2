@@ -29,7 +29,9 @@ jobs:
         run: |
           mkdir -p draw
           keymap parse -z config/lalapadgen2.keymap > draw/lalapadgen2.yaml
-          # Attach the physical layout (converted from the keymap-editor JSON)
+          # Replace the auto-detected layout with our converted physical layout
+          # (from the keymap-editor JSON). Drop the auto-emitted `layout:` line first.
+          sed -i '/^layout:/d' draw/lalapadgen2.yaml
           printf 'layout:\n  qmk_info_json: keymap_drawer_layout.json\n  layout_name: LAYOUT\n' >> draw/lalapadgen2.yaml
 
       - name: Draw keymap
