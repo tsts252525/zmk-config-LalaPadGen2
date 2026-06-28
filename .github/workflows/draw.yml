@@ -1,0 +1,44 @@
+name: Draw keymap
+
+on:
+  push:
+    paths:
+      - "config/lalapadgen2.keymap"
+      - "keymap_drawer_layout.json"
+      - ".github/workflows/draw.yml"
+  workflow_dispatch:
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer
+
+      - name: Parse keymap
+        run: |
+          mkdir -p draw
+          keymap parse -z config/lalapadgen2.keymap > draw/lalapadgen2.yaml
+          # Replace the auto-detected layout with our converted physical layout
+          # (from the keymap-editor JSON). Drop the auto-emitted `layout:` line first.
+          sed -i '/^layout:/d' draw/lalapadgen2.yaml
+          printf 'layout:\n  qmk_info_json: keymap_drawer_layout.json\n  layout_name: LAYOUT\n' >> draw/lalapadgen2.yaml
+
+      - name: Draw keymap
+        run: keymap draw draw/lalapadgen2.yaml > draw/lalapadgen2.svg
+
+      - name: Commit updated drawings
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update keymap drawing [skip ci]"
+          file_pattern: "draw/lalapadgen2.yaml draw/lalapadgen2.svg"
