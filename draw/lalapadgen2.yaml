@@ -34,11 +34,11 @@ layers:
   - LWIN
   - LEFT ALT
   - {t: SPACE, h: secondary_layer}
-  - {t: LANGUAGE 2, h: tertiary_layer}
+  - {t: LANG5, h: tertiary_layer}
   - {t: LANG1, h: Arrow}
+  - {t: LANGUAGE 2, h: Arrow}
   - BACKSPACE
   - ENTER
-  - {t: LANG ZENKAKUHANKAKU, h: Arrow}
   - '='
   - '~'
   - '!'
