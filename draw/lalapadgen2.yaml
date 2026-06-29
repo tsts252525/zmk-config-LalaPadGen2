@@ -33,24 +33,24 @@ layers:
   - LCTRL
   - LWIN
   - LEFT ALT
-  - {t: LANG2, h: tertiary_layer}
   - {t: SPACE, h: secondary_layer}
+  - {t: LANGUAGE 2, h: tertiary_layer}
   - {t: LANG1, h: Arrow}
   - BACKSPACE
   - ENTER
-  - Arrow
-  - LANGUAGE 2
-  - LANGUAGE 1
-  - \
+  - {t: LANG ZENKAKUHANKAKU, h: Arrow}
+  - '='
+  - '~'
+  - '!'
   - ''
-  - LEFT
-  - UP
   - RIGHT
   - DOWN
+  - LEFT
+  - UP ARROW
+  - UP ARROW
+  - LEFT ARROW
   - DOWN
   - RIGHT
-  - UP
-  - LEFT
   - ''
   - '&mkp LCLK'
   - '&mkp RCLK'
@@ -102,8 +102,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DEL
   - {t: ▽, type: trans}
@@ -138,9 +138,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   tertiary_layer:
-  - '!'
+  - {t: ▽, type: trans}
   - '&'
-  - '#'
+  - '*'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '{'
@@ -149,8 +149,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '~'
-  - $
-  - '%'
+  - '!'
+  - '@'
   - ^
   - {t: ▽, type: trans}
   - (
@@ -159,8 +159,8 @@ layers:
   - '"'
   - \
   - '`'
-  - '!'
-  - '@'
+  - $
+  - '%'
   - '#'
   - {t: ▽, type: trans}
   - '['
@@ -171,8 +171,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
