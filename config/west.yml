@@ -8,13 +8,17 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: kot149
       url-base: https://github.com/kot149
+    - name: tsts252525
+      url-base: https://github.com/tsts252525
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
+    # スクロール方向反転オプションを追加したフォーク（ピンチには影響しない）。
+    # 本家: ShiniNet/zmk-driver-iqs9151
     - name: zmk-driver-iqs9151
-      remote: ShiniNet
+      remote: tsts252525
       revision: main
     - name: zmk-easy-charge-indicator
       remote: ShiniNet
